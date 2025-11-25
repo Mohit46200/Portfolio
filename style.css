@@ -14,24 +14,24 @@ body{
     margin: 10vw auto 0vw auto;
 }
 h4{
-    margin-bottom: 0.5vw;
+    margin-bottom: 1vw;
     color: white;
 }
 #p1{
-    margin-bottom: 0.5vw;
+    margin-bottom: 1vw;
 }
 #p2{
-    margin-bottom: 1vw;
+    margin-bottom: 2vw;
 }
 #p3{
-    margin-bottom: 1vw;
+    margin-bottom: 2vw;
 }
 #p4{
-    margin-bottom: 2.5vw;
+    margin-bottom: 5vw;
 }
 #skills{
     display: flex;
-    margin-bottom: 1.5vw;
+    margin-bottom: 3vw;
 }
 .sk{
     text-align: center;
@@ -42,13 +42,13 @@ h4{
 }
 #p5{
     margin-top: 0.5vw;
-    margin-bottom: 0.5vw;
+    margin-bottom: 1vw;
 }
 .deco{
     height: 20vw;
     width: 30vw;
     background:linear-gradient(135deg, #0f0f0f, #1a1f29);
-    margin: 1vw auto 1.5vw auto;
+    margin: 1vw auto 3vw auto;
     border-radius: 2vw;
     display: flex;
     align-items: center;
@@ -100,6 +100,15 @@ h3{
   #intro{
     width: 80vw;
     margin: 20vw auto;
+  }
+  #p4{
+    margin-bottom: 8vw;
+  }
+  #p3{
+    margin-bottom: 4vw;
+  }
+  #p5{
+    margin-bottom: 2vw;
   }
 
 }
