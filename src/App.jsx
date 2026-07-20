@@ -35,7 +35,7 @@ const PROJECTS = [
       "Built and deployed independently, end to end",
     ],
     stack: ["React", "JavaScript", "CSS"],
-    href: "https://vedio-call-peach.vercel.app",
+    href: "https://vedio-call-peach.vercel.app/home",
   },
   {
     code: "BUILD-02",
@@ -199,17 +199,17 @@ export default function Portfolio() {
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
         .bp-root {
-          --bp-paper: #F3F5F7;
-          --bp-line: #D7DEE7;
-          --bp-ink: #14213D;
-          --bp-ink-soft: #4A5A72;
-          --bp-blue: #2B5F8A;
-          --bp-blue-deep: #0F2540;
+          --bp-paper: #F8F3F6;
+          --bp-line: #E4D3DC;
+          --bp-ink: #2B1F28;
+          --bp-ink-soft: #6E5568;
+          --bp-blue: #8B5D78;
+          --bp-blue-deep: #2E1A29;
           --bp-amber: #E2790F;
           --bp-amber-soft: #FCEEDD;
           --bp-card-bg: #FFFFFF;
           --bp-hero-bg: rgba(255,255,255,0.6);
-          --bp-on-dark: #F3F5F7;
+          --bp-on-dark: #F8F3F6;
           background: var(--bp-paper);
           color: var(--bp-ink);
           font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -217,17 +217,17 @@ export default function Portfolio() {
           transition: background 0.25s ease, color 0.25s ease;
         }
 
-        /* Dark theme = a real cyanotype blueprint: blue paper, light linework */
+        /* Dark theme keeps the same mauve family, deepened into a plum */
         .bp-root[data-theme="dark"] {
-          --bp-paper: #0B1E33;
-          --bp-line: rgba(233,239,246,0.14);
-          --bp-ink: #F3F5F7;
-          --bp-ink-soft: #A9BBD0;
-          --bp-blue: #7FB2E0;
-          --bp-blue-deep: #061423;
+          --bp-paper: #1D1119;
+          --bp-line: rgba(248,243,246,0.13);
+          --bp-ink: #F8F3F6;
+          --bp-ink-soft: #C6A9BC;
+          --bp-blue: #D9A0BF;
+          --bp-blue-deep: #140A12;
           --bp-amber: #F0922D;
           --bp-amber-soft: rgba(226,121,15,0.16);
-          --bp-card-bg: #102B47;
+          --bp-card-bg: #2C1A28;
           --bp-hero-bg: rgba(255,255,255,0.03);
         }
         .font-display { font-family: 'Space Grotesk', ui-sans-serif, sans-serif; }
@@ -318,7 +318,7 @@ export default function Portfolio() {
       {/* ---------------- NAV ---------------- */}
       <header
         className="fixed top-0 left-0 right-0 z-50 backdrop-blur"
-        style={{ background: "rgba(15,37,64,0.92)" }}
+        style={{ background: "rgba(46,26,41,0.92)" }}
       >
         <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <a
