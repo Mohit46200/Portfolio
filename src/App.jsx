@@ -12,7 +12,7 @@ const PROFILE = {
   name: "Mohit Kumar Verma",
   photo: PROFILE_PHOTO,
   role: "Frontend Developer",
-  base: "Longowal, Punjab, IN",
+  base: "Haridwar, Uttarakhand, IN",
   email: "mohit22600@gmail.com",
   phone: "+91 82798 86844",
   phoneHref: "tel:+918279886844",
@@ -35,7 +35,7 @@ const PROJECTS = [
       "Built and deployed independently, end to end",
     ],
     stack: ["React", "JavaScript", "CSS"],
-    href: "https://vedio-call-peach.vercel.app/home",
+    href: "https://vedio-call-peach.vercel.app",
   },
   {
     code: "BUILD-02",
@@ -141,7 +141,7 @@ function PhotoFrame({ src, initials }) {
         </div>
       </div>
       <span className="font-mono text-[10px] tracking-[0.2em]" style={{ color: "var(--bp-ink-soft)" }}>
-        FIG. 01 — PORTRAIT
+        MKV
       </span>
     </div>
   );
@@ -662,7 +662,7 @@ export default function Portfolio() {
             style={{ borderTop: "1px solid rgba(243,245,247,0.12)", color: "rgba(243,245,247,0.45)" }}
           >
             <span>DESIGNED &amp; BUILT BY {PROFILE.name.toUpperCase()}</span>
-            <span>REV. 2026.07</span>
+            <span>with help of Claude AI</span>
           </div>
         </div>
       </footer>
