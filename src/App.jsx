@@ -428,13 +428,7 @@ export default function Portfolio() {
                   <a href="#projects" className="bp-btn-amber font-mono text-xs tracking-widest uppercase px-6 py-3 rounded-sm bp-focus inline-flex items-center gap-2">
                     View Projects <ArrowUpRight size={14} />
                   </a>
-                  <a
-                    href={`mailto:${PROFILE.email}`}
-                    className="font-mono text-xs tracking-widest uppercase px-6 py-3 rounded-sm border bp-focus"
-                    style={{ borderColor: "var(--bp-blue)", color: "var(--bp-blue)" }}
-                  >
-                    Say Hello
-                  </a>
+                  
                 </div>
               </div>
 
