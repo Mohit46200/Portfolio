@@ -35,7 +35,7 @@ const PROJECTS = [
       "Built and deployed independently, end to end",
     ],
     stack: ["React", "JavaScript", "CSS"],
-    href: "https://vedio-call-peach.vercel.app/home",
+    href: "https://vedio-call-peach.vercel.app",
   },
   {
     code: "BUILD-02",
