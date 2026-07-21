@@ -11,7 +11,7 @@ const PROFILE_PHOTO = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA
 const PROFILE = {
   name: "Mohit Kumar Verma",
   photo: PROFILE_PHOTO,
-  role: "Frontend Developer",
+  role: "Engineer",
   base: "Haridwar, Uttarakhand, IN",
   email: "mohit22600@gmail.com",
   phone: "+91 82798 86844",
@@ -412,7 +412,7 @@ export default function Portfolio() {
             <div className="flex flex-col-reverse md:flex-row md:items-start md:justify-between gap-10">
               <div className="flex-1">
                 <p className="font-mono text-xs md:text-sm tracking-[0.25em]" style={{ color: "var(--bp-blue)" }}>
-                  // WEB DEVELOPER — IN TRAINING
+                  // Software Engineer
                 </p>
 
                 <h1 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] mt-4" style={{ color: "var(--bp-ink)" }}>
@@ -496,8 +496,8 @@ export default function Portfolio() {
               <div className="border-l pl-6 space-y-6" style={{ borderColor: "var(--bp-line)" }}>
                 {[
                   ["EDUCATION", "B.Tech, SLIET Longowal — ongoing"],
-                  ["FOCUS", "React · UI Engineering"],
-                  ["LOOKING FOR", "WEB Internships"],
+                  ["FOCUS", "Full Stack Development"],
+                  ["LOOKING FOR", "Internship/Job"],
                   ["BASE", PROFILE.base],
                 ].map(([label, value]) => (
                   <div key={label}>
