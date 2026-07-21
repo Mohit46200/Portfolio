@@ -49,7 +49,7 @@ const PROJECTS = [
       "Responsive layout across devices",
     ],
     stack: ["React", "JavaScript", "CSS"],
-    href: "https://projects-frontened-3bqz.vercel.app",
+    href: "https://mkv-e-commerce.vercel.app/home",
   },
 ];
 
