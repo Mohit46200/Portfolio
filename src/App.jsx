@@ -11,7 +11,7 @@ const PROFILE_PHOTO = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA
 const PROFILE = {
   name: "Mohit Kumar Verma",
   photo: PROFILE_PHOTO,
-  role: "Engineer",
+  role: "Software Engineer",
   base: "Haridwar, Uttarakhand, IN",
   email: "mohit22600@gmail.com",
   phone: "+91 82798 86844",
