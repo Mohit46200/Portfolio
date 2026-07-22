@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Github, Linkedin, Mail, Phone, ArrowUpRight, Menu, X, Sun, Moon } from "lucide-react";
 
 /* ---------------------------------------------------------
-   DATA — edit here to update content
+   DATA — edit here to update the content
 --------------------------------------------------------- */
 
 // Portrait photo, embedded directly so the file has zero extra setup steps.
