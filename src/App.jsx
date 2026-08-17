@@ -34,8 +34,8 @@ const PROJECTS = [
       "Minimal, focused call-room interface",
       "Built and deployed independently, end to end",
     ],
-    stack: ["React", "JavaScript", "CSS"],
-    href: "https://vedio-call-peach.vercel.app",
+    stack: ["WebRTC", "React", "Javascript"],
+    href: "https://vediocall.memohit.space",
   },
   {
     code: "BUILD-02",
@@ -44,12 +44,30 @@ const PROJECTS = [
     description:
       "A frontend e-commerce experience covering the core shopping flow — browsing products, viewing details, and moving through a cart — built to practice component structure and state at a larger scale.",
     points: [
+      "Google Authentication",
       "Product listing and detail views",
       "Cart-driven shopping flow",
       "Responsive layout across devices",
+      
     ],
-    stack: ["React", "JavaScript", "CSS"],
-    href: "https://mkv-e-commerce.vercel.app",
+    stack: ["React", "JavaScript", "Node", "Express","MongoDB"],
+    href: "https://ecommerce.memohit.space",
+  },
+  {
+    code: "BUILD-03",
+    title: "ZenithIndia Animated Landing Page",
+    status: "LIVE",
+    description:
+      "Zenith Indian is an animated landing page built with GSAP, featuring smooth interactions and cinematic visuals using Google Flow video converted into optimized AVIF frames.",
+    points: [
+      "Built with GSAP animations",
+      "Cinematic scroll-based visual effects",
+      "Google Flow video converted to AVIF",
+      "Optimized frames for faster loading",
+      
+    ],
+    stack: ["React", "JavaScript", "GSAP Library"],
+    href: "https://zenith.memohit.space/",
   },
 ];
 
@@ -60,7 +78,7 @@ const SKILLS = [
   },
   {
     group: "Framework & Styling",
-    items: ["React", "Tailwind CSS"],
+    items: ["React", "Tailwind CSS","GSAP"],
   },
   {
     group: "Currently Building With",
@@ -178,11 +196,6 @@ function SheetHeader({ index, total, label, title, dark = false }) {
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setTheme(prefersDark ? "dark" : "light");
-  }, []);
 
   const toggleTheme = () => setTheme((t) => (t === "light" ? "dark" : "light"));
 
@@ -326,7 +339,7 @@ export default function Portfolio() {
             className="font-mono text-sm tracking-widest bp-focus rounded"
             style={{ color: "var(--bp-on-dark)" }}
           >
-            MKV<span style={{ color: "var(--bp-amber)" }}>.</span>DEV
+            MKV<span style={{ color: "var(--bp-amber)" }}>.</span>SPACE
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -421,7 +434,7 @@ export default function Portfolio() {
 
                 <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed" style={{ color: "var(--bp-ink-soft)" }}>
                   B.Tech student at SLIET Longowal, building interactive interfaces with React.
-                  I learn by shipping — two live projects below, and a growing grip on the full MERN stack.
+                  I learn by shipping — three live projects below, and a growing grip on the full MERN stack.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -486,7 +499,7 @@ export default function Portfolio() {
                 feature end to end, not just the screen the user sees.
               </p>
               <p className="mt-5 text-base md:text-lg leading-relaxed" style={{ color: "var(--bp-ink-soft)" }}>
-                I learn best by shipping — the two projects on this page are both live, both built from
+                I learn best by shipping — the three projects on this page are both live, both built from
                 scratch, and both taught me more than any tutorial could. I'm now looking for a frontend
                 internship where I can do the same thing at a larger scale, with a team to learn from.
               </p>
@@ -515,7 +528,7 @@ export default function Portfolio() {
       <section id="projects" className="bp-grid-bg px-6 md:px-10 py-20 md:py-28">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <SheetHeader index="02" total="04" label="PROJECT LOG" title="Things I've shipped" />
+            <SheetHeader index="02" total="04" label="PROJECT LOG" title="Things I've Build" />
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-8">
