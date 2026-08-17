@@ -14,8 +14,6 @@ const PROFILE = {
   role: "Software Engineer",
   base: "Haridwar, Uttarakhand, IN",
   email: "mohit22600@gmail.com",
-  phone: "+91 82798 86844",
-  phoneHref: "tel:+918279886844",
   github: "https://github.com/Mohit46200",
   githubLabel: "github.com/Mohit46200",
   linkedin: "https://www.linkedin.com/in/mohit-kumar-verma-07066437a/",
@@ -176,7 +174,7 @@ function SheetHeader({ index, total, label, title, dark = false }) {
           className="font-mono text-[11px] md:text-xs tracking-[0.2em]"
           style={{ color: "var(--bp-blue)" }}
         >
-          SHEET {index}/{total} — {label}
+          {/* SHEET {index}/{total} — {label} */}
         </span>
         <h2
           className="font-display text-3xl md:text-[2.5rem] leading-tight mt-2"
@@ -200,7 +198,6 @@ export default function Portfolio() {
   const toggleTheme = () => setTheme((t) => (t === "light" ? "dark" : "light"));
 
   const navLinks = [
-    { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
@@ -318,9 +315,9 @@ export default function Portfolio() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid rgba(243,245,247,0.3);
+          border: 1px solid var(--bp-line);
           border-radius: 2px;
-          color: var(--bp-on-dark);
+          color: var(--bp-ink);
           transition: border-color 0.15s ease, transform 0.15s ease;
         }
         .bp-theme-toggle:hover { border-color: var(--bp-amber); transform: rotate(12deg); }
@@ -330,14 +327,14 @@ export default function Portfolio() {
 
       {/* ---------------- NAV ---------------- */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur"
-        style={{ background: "rgba(46,26,41,0.92)" }}
+        className="w-full"
+        style={{ background: "var(--bp-paper)" }}
       >
         <div className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <a
             href="#top"
             className="font-mono text-sm tracking-widest bp-focus rounded"
-            style={{ color: "var(--bp-on-dark)" }}
+            style={{ color: "var(--bp-ink)" }}
           >
             MKV<span style={{ color: "var(--bp-amber)" }}>.</span>SPACE
           </a>
@@ -348,7 +345,7 @@ export default function Portfolio() {
                 key={l.label}
                 href={l.href}
                 className="bp-nav-link font-mono text-xs tracking-widest uppercase bp-focus rounded"
-                style={{ color: "var(--bp-on-dark)" }}
+                style={{ color: "var(--bp-ink)" }}
               >
                 {l.label}
               </a>
@@ -378,7 +375,7 @@ export default function Portfolio() {
             </button>
             <button
               className="bp-focus rounded"
-              style={{ color: "var(--bp-on-dark)" }}
+              style={{ color: "var(--bp-ink)" }}
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
@@ -390,7 +387,7 @@ export default function Portfolio() {
         {menuOpen && (
           <div
             className="md:hidden px-6 pb-6 flex flex-col gap-4"
-            style={{ borderTop: "1px solid rgba(243,245,247,0.15)" }}
+            style={{ borderTop: "1px solid var(--bp-line)" }}
           >
             {navLinks.map((l) => (
               <a
@@ -398,7 +395,7 @@ export default function Portfolio() {
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
                 className="font-mono text-xs tracking-widest uppercase pt-4"
-                style={{ color: "var(--bp-on-dark)" }}
+                style={{ color: "var(--bp-ink)" }}
               >
                 {l.label}
               </a>
@@ -414,7 +411,7 @@ export default function Portfolio() {
       </header>
 
       {/* ---------------- HERO ---------------- */}
-      <section id="top" className="bp-grid-bg pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-10">
+      <section id="top" className="bp-grid-bg pt-16 pb-16 md:pt-20 md:pb-24 px-6 md:px-10">
         <div className="max-w-6xl mx-auto">
           <div className="relative border px-6 py-10 md:px-14 md:py-16" style={{ borderColor: "var(--bp-blue)", background: "var(--bp-hero-bg)" }}>
             <CornerMark className="-top-2 -left-2" />
@@ -449,23 +446,7 @@ export default function Portfolio() {
             </div>
 
             {/* title block strip */}
-            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 border-t" style={{ borderColor: "var(--bp-line)" }}>
-              {[
-                ["ROLE", PROFILE.role],
-                ["BASE", PROFILE.base],
-                ["STACK", "React · JS · Tailwind"],
-                ["STATUS", "Open to Internships"],
-              ].map(([label, value], i) => (
-                <div
-                  key={label}
-                  className="px-0 md:px-6 py-4 md:border-l"
-                  style={{ borderColor: "var(--bp-line)", borderLeftWidth: i === 0 ? 0 : undefined }}
-                >
-                  <div className="font-mono text-[10px] tracking-[0.2em]" style={{ color: "var(--bp-blue)" }}>{label}</div>
-                  <div className="font-mono text-sm mt-1" style={{ color: "var(--bp-ink)" }}>{value}</div>
-                </div>
-              ))}
-            </div>
+           
           </div>
 
           <div className="flex gap-5 mt-6 pl-1">
@@ -482,48 +463,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ---------------- ABOUT ---------------- */}
-      <section id="about" className="px-6 md:px-10 py-20 md:py-28">
-        <div className="max-w-6xl mx-auto">
-          <Reveal>
-            <SheetHeader index="01" total="04" label="ABOUT" title="Who's building this" />
-          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
-            <Reveal className="md:col-span-2">
-              <p className="text-base md:text-lg leading-relaxed" style={{ color: "var(--bp-ink-soft)" }}>
-                I'm a B.Tech student at SLIET Longowal, currently in the middle of learning how to turn
-                interfaces into something people actually enjoy using. Most of my time goes into React —
-                building components, wiring up state, and getting the small interaction details right.
-                Alongside that, I've been picking up the rest of the MERN stack so I can eventually own a
-                feature end to end, not just the screen the user sees.
-              </p>
-              <p className="mt-5 text-base md:text-lg leading-relaxed" style={{ color: "var(--bp-ink-soft)" }}>
-                I learn best by shipping — the three projects on this page are both live, both built from
-                scratch, and both taught me more than any tutorial could. I'm now looking for a frontend
-                internship where I can do the same thing at a larger scale, with a team to learn from.
-              </p>
-            </Reveal>
-
-            <Reveal delay={100}>
-              <div className="border-l pl-6 space-y-6" style={{ borderColor: "var(--bp-line)" }}>
-                {[
-                  ["EDUCATION", "B.Tech, SLIET Longowal — ongoing"],
-                  ["FOCUS", "Full Stack Development"],
-                  ["LOOKING FOR", "Internship/Job"],
-                  ["BASE", PROFILE.base],
-                ].map(([label, value]) => (
-                  <div key={label}>
-                    <div className="font-mono text-[11px] tracking-[0.2em]" style={{ color: "var(--bp-blue)" }}>{label}</div>
-                    <div className="mt-1 text-sm md:text-base" style={{ color: "var(--bp-ink)" }}>{value}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
+      
       {/* ---------------- PROJECTS ---------------- */}
       <section id="projects" className="bp-grid-bg px-6 md:px-10 py-20 md:py-28">
         <div className="max-w-6xl mx-auto">
@@ -624,8 +565,8 @@ export default function Portfolio() {
 
           <Reveal delay={100}>
             <p className="max-w-xl text-base md:text-lg leading-relaxed" style={{ color: "rgba(243,245,247,0.75)" }}>
-              Open to frontend internship roles — remote or on-site. If you've got a team that needs
-              an extra pair of hands on the UI, I'd like to hear about it.
+              Open to Full-Stack internship roles — remote. If you've got a team that needs
+              an extra pair of hands on the Stack, I'd like to hear about it.
             </p>
             <a
               href={`mailto:${PROFILE.email}`}
@@ -639,7 +580,6 @@ export default function Portfolio() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 pt-8" style={{ borderTop: "1px solid rgba(243,245,247,0.18)" }}>
               {[
                 [Mail, "EMAIL", PROFILE.email, `mailto:${PROFILE.email}`],
-                [Phone, "PHONE", PROFILE.phone, PROFILE.phoneHref],
                 [Github, "GITHUB", PROFILE.githubLabel, PROFILE.github],
                 [Linkedin, "LINKEDIN", PROFILE.linkedinLabel, PROFILE.linkedin],
               ].map(([Icon, label, value, href]) => (
