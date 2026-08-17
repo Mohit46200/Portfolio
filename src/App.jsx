@@ -34,6 +34,7 @@ const PROJECTS = [
     ],
     stack: ["WebRTC", "React", "Javascript"],
     href: "https://vediocall.memohit.space",
+    href2: "https://github.com/Mohit46200/Vedio-call"
   },
   {
     code: "BUILD-02",
@@ -50,6 +51,7 @@ const PROJECTS = [
     ],
     stack: ["React", "JavaScript", "Node", "Express","MongoDB"],
     href: "https://ecommerce.memohit.space",
+    href2: "https://github.com/Mohit46200/E_commerce"
   },
   {
     code: "BUILD-03",
@@ -66,6 +68,7 @@ const PROJECTS = [
     ],
     stack: ["React", "JavaScript", "GSAP Library"],
     href: "https://zenith.memohit.space/",
+    href2: "https://github.com/Mohit46200/Zenith"
   },
 ];
 
@@ -509,6 +512,17 @@ export default function Portfolio() {
                     ))}
                   </div>
 
+                  <div className="mt-6 pt-6 border-t" style={{ borderColor: "var(--bp-line)" }}>
+                    <a
+                      href={p.href2}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase bp-focus rounded"
+                      style={{ color: "var(--bp-amber)" }}
+                    >
+                      Github Repo <ArrowUpRight size={14} />
+                    </a>
+                  </div>
                   <div className="mt-6 pt-6 border-t" style={{ borderColor: "var(--bp-line)" }}>
                     <a
                       href={p.href}
