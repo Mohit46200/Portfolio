@@ -36,23 +36,36 @@ const PROJECTS = [
   },
   {
     code: "BUILD-02",
-    title: "E-Commerce Web App",
-    status: "LIVE",
+    title: "AI GitHub Code Reviewer",
+    status: "NOT DEPLOYED",
     description:
-      "A frontend e-commerce experience covering the core shopping flow — browsing products, viewing details, and moving through a cart — built to practice component structure and state at a larger scale.",
+      "An autonomous AI agent that clones a GitHub repository, understands the codebase with embeddings and RAG, finds and fixes a bug, writes a regression test, runs the full suite inside an isolated Docker sandbox, has its own change reviewed, and opens a draft pull request for a human to approve.",
     points: [
-      "Google Authentication",
-      "Product listing and detail views",
-      "Cart-driven shopping flow",
-      "Responsive layout across devices",
-      
+      "Multi-step LangGraph workflow: setup → planner → coder → tester → reviewer → draft PR",
+      "Semantic code search with local embeddings stored in PostgreSQL + pgvector",
+      "Runs repo code in a network-isolated Docker sandbox and diffs test results against a baseline to catch regressions",
+      "Quality gate opens a PR only when the reviewer approves and no tests regress, otherwise loops back to the coder",
+      "Next.js dashboard streams every agent action live over Server-Sent Events",
     ],
-    stack: ["React", "JavaScript", "Node", "Express","MongoDB"],
-    href: "https://ecommerce.memohit.space",
-    href2: "https://github.com/Mohit46200/E_commerce"
+    stack: ["Python", "FastAPI", "LangGraph", "Claude API", "PostgreSQL", "pgvector", "Docker", "Next.js", "TypeScript"],
   },
   {
     code: "BUILD-03",
+    title: "AI Mail Sorting",
+    status: "NOT DEPLOYED",
+    description:
+      "A Gmail assistant that sorts your inbox for you. Sign in with Google, pick a date range, and the app fetches your emails, uses AI to sort each one into important, spam, fraud or other, and drafts replies for the important ones, which you can edit, copy or save as Gmail drafts. Nothing is ever sent automatically.",
+    points: [
+      "Secure Google OAuth sign-in with the Gmail API (no passwords handled by the app)",
+      "Gemini classifies each email as important, spam, fraud or other",
+      "GPT writes reply drafts for important emails",
+      "Edit, copy, or save replies straight to Gmail drafts",
+      "Prompts treat email content as untrusted to resist prompt injection",
+    ],
+    stack: ["Node.js", "Express", "Gmail API", "Google OAuth", "Gemini API", "OpenAI API", "Jev AI", "JavaScript"],
+  },
+  {
+    code: "BUILD-04",
     title: "ZenithIndia Animated Landing Page",
     status: "LIVE",
     description:
@@ -73,15 +86,27 @@ const PROJECTS = [
 const SKILLS = [
   {
     group: "Languages & Markup",
-    items: ["HTML5", "CSS3", "JavaScript (ES6+)"],
+    items: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "Python"],
   },
   {
-    group: "Framework & Styling",
-    items: ["React", "Tailwind CSS","GSAP"],
+    group: "Frontend & Styling",
+    items: ["React", "Next.js", "Tailwind CSS", "GSAP", "WebRTC"],
   },
   {
-    group: "Currently Building With",
-    items: ["Node.js", "Express", "MongoDB"],
+    group: "Backend",
+    items: ["Node.js", "Express", "FastAPI", "Server-Sent Events"],
+  },
+  {
+    group: "Databases",
+    items: ["MongoDB", "PostgreSQL", "pgvector"],
+  },
+  {
+    group: "AI & LLMs",
+    items: ["Claude API", "Gemini API", "OpenAI API", "Jev AI", "LangGraph", "RAG & Embeddings"],
+  },
+  {
+    group: "APIs & Tools",
+    items: ["Docker", "Gmail API", "Google OAuth", "Git & GitHub"],
   },
 ];
 
@@ -510,28 +535,28 @@ export default function Portfolio() {
                     ))}
                   </div>
 
-                  <div className="mt-6 pt-6 border-t" style={{ borderColor: "var(--bp-line)" }}>
-                    <a
-                      href={p.href2}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase bp-focus rounded"
-                      style={{ color: "var(--bp-amber)" }}
-                    >
-                      Github Repo <ArrowUpRight size={14} />
-                    </a>
-                  </div>
-                  <div className="mt-6 pt-6 border-t" style={{ borderColor: "var(--bp-line)" }}>
-                    <a
-                      href={p.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase bp-focus rounded"
-                      style={{ color: "var(--bp-amber)" }}
-                    >
-                      Live Demo <ArrowUpRight size={14} />
-                    </a>
-                  </div>
+                  {[
+                    [p.href2, "Github Repo", "Github Repo — Not deployed yet"],
+                    [p.href, "Live Demo", "Live Demo — Not deployed yet"],
+                  ].map(([url, label, fallback]) => (
+                    <div key={label} className="mt-6 pt-6 border-t" style={{ borderColor: "var(--bp-line)" }}>
+                      {url ? (
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase bp-focus rounded"
+                          style={{ color: "var(--bp-amber)" }}
+                        >
+                          {label} <ArrowUpRight size={14} />
+                        </a>
+                      ) : (
+                        <span className="font-mono text-xs tracking-widest uppercase" style={{ color: "var(--bp-ink-soft)" }}>
+                          {fallback}
+                        </span>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </Reveal>
             ))}
